@@ -43,11 +43,11 @@ git clone https://github.com/guangzhengli/hugo-ladder-exampleSite.git
 根目录的 `config.yml` 文件，使用编辑器打开，修改如下大致的一些配置
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev' #修改为你的 https://username.github.io
-homepage: 'https://hugo-ladder.pages.dev' #修改为你的 https://username.github.io
-defaultContentLanguage: 'en' #修改默认语言，例如改为 zh 即默认使用中文
+baseURL: 'https://hui61.github.io' #修改为你的 https://username.github.io
+homepage: 'https://hui61.github.io' #修改为你的 https://username.github.io
+defaultContentLanguage: 'zh' #修改默认语言，例如改为 zh 即默认使用中文
 params:
-  brand: HOME # 修改默认的为自己网站的标志
+  brand: 别闹了程序猿 # 修改默认的为自己网站的标志
   avatarURL: /images/avatar.png #网站主页的照片信息，你可以在根目录 /static/images/ 里面替换成自己的照片
   author: Hugo Ladder # 修改你自己的名字
   authorDescription: # 修改对你自己的描述

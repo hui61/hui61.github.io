@@ -37,16 +37,16 @@ After pulling the repository code, we need to modify the configuration, which in
 Open the  `config.yml` file in the root directory with an editor and change the configuration as follows: 
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev' # set https://username.github.io
-homepage: 'https://hugo-ladder.pages.dev' # set https://username.github.io
-defaultContentLanguage: 'en' #default language
+baseURL: 'https://hui61.github.io' # set https://username.github.io
+homepage: 'https://hui61.github.io' # set https://username.github.io
+defaultContentLanguage: 'zh' #default language
 params:
-  brand: HOME # set the brand of your site
-  avatarURL: /images/avatar.png # avatar, replace your avatar in the /static/images/
-  author: Hugo Ladder # name
-  authorDescription: # description
-  info:  this is a info # information of your blog site
-  favicon: /images/avatar.png # blog site icon，replace your avatar in the /static/images/
+  brand: 别闹了程序猿 # set the brand of your site
+  avatarURL: /images/别闹了程序猿.png # avatar, replace your avatar in the /static/images/
+  author: 惠六一 # name
+  authorDescription: 一个程序员
+  info:  记录一些事情 # information of your blog site
+  favicon: /images/别闹了程序猿.png # blog site icon，replace your avatar in the /static/images/
   options:
     showDarkMode: true # is show dark mode button
     enableMultiLang: true # is show multi language button

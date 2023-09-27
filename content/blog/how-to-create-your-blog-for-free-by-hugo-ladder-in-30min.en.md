@@ -97,18 +97,18 @@ Here is all configuration in the `config.yml`, you can delete the default `confi
 {{< toggle summary="click here to show `config.yml` file" >}}
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev'
+baseURL: 'https://hui61.github.io'
 title: LADDER
 theme: hugo-theme-ladder
 license: MIT
 licenselink: 'https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE'
 description: 'A fast, clean Hugo theme'
-homepage: 'https://hugo-ladder.pages.dev'
-defaultContentLanguage: 'en'
+homepage: 'https://hui61.github.io'
+defaultContentLanguage: 'zh'
 googleAnalytics: G-xxx
 paginate: 10
 params:
-  brand: HOME
+  brand: 别闹了程序猿
   avatarURL: /images/avatar.png
   author: Hugo Ladder
   authorDescription: A clean, fast hugo theme focused on Reading
@@ -221,10 +221,10 @@ In addition, if you don't need multi-language support, set `params.options.enabl
 ### modify the basic configuration
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev' #change to your https://username.github.io
-homepage: 'https://hugo-ladder.pages.dev' #change to your https://username.github.io
+baseURL: 'https://hui61.github.io' #change to your https://username.github.io
+homepage: 'https://hui61.github.io' #change to your https://username.github.io
 params:
-  brand: HOME # change to your brand of blog site
+  brand: 别闹了程序猿 # change to your brand of blog site
   avatarURL: /images/avatar.png # change /static/images/ file
   author: Hugo Ladder # your name
   authorDescription: # your desc
@@ -274,7 +274,7 @@ featured: true
 
 This theme integrates `Toggle` and `Tab group` by default, The `Toggle` can hide code or content in [#Configuration initialization](#configuration-initialization), and the `Tab group` can toggle tabs to write content in [#Install Hugo](#Installation) for example.
 
-In addition, there are rich content such as `youtube`, `twitter` and `site page jump` integration. You can check [rich content](https://hugo-ladder.pages.dev/blog/tag-plugins/) for details.
+In addition, there are rich content such as `youtube`, `twitter` and `site page jump` integration. You can check [rich content](https://hui61.github.io/blog/tag-plugins/) for details.
 
 I also created a new repository https://github.com/guangzhengli/awesome-hugo-shortcodes to collect `hugo shortcodes`, you can go see if there are any you need, you can add them yourself.
 

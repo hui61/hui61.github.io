@@ -95,18 +95,18 @@ git submodule add https://github.com/guangzhengli/hugo-theme-ladder themes/ladde
 {{< toggle summary="点击查看完整的 `config.yml` 文件" >}}
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev'
+baseURL: 'https://hui61.github.io'
 title: LADDER
 theme: hugo-theme-ladder
 license: MIT
 licenselink: 'https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE'
 description: 'A fast, clean Hugo theme'
-homepage: 'https://hugo-ladder.pages.dev'
-defaultContentLanguage: 'en'
+homepage: 'https://hui61.github.io'
+defaultContentLanguage: 'zh'
 googleAnalytics: G-xxx
 paginate: 10
 params:
-  brand: HOME
+  brand: 别闹了程序猿
   avatarURL: /images/avatar.png
   author: Hugo Ladder
   authorDescription: A clean, fast hugo theme focused on Reading
@@ -250,10 +250,10 @@ hugo server -D
 ### 修改基本信息
 
 ```yml
-baseURL: 'https://hugo-ladder.pages.dev' #修改为你的 https://username.github.io
-homepage: 'https://hugo-ladder.pages.dev' #修改为你的 https://username.github.io
+baseURL: 'https://hui61.github.io' #修改为你的 https://username.github.io
+homepage: 'https://hui61.github.io' #修改为你的 https://username.github.io
 params:
-  brand: HOME # 修改默认的为自己网站的标志
+  brand: 别闹了程序猿 # 修改默认的为自己网站的标志
   avatarURL: /images/avatar.png #网站主页的照片信息，你可以在根目录 /static/images/ 里面替换成自己的照片
   author: Hugo Ladder # 修改你自己的名字
   authorDescription: # 修改对你自己的描述
@@ -309,7 +309,7 @@ featured: true
 
 目前博客默认集成 `Toggle`和 `Tab group` 两种富文本， `Toggle` 的效果例如 [#配置初始化](#配置初始化) 中可以隐藏代码或者文本， `Tab group` 的效果例如在 [#安装Hugo](#安装) 中可以切换标签来写教程或文本。
 
-除此之外，还有集成 `youtube`  `twitter ` 和 `站点页面跳转` 等富文本功能。详细可以查看 [rich content](https://hugo-ladder.pages.dev/blog/tag-plugins/)。
+除此之外，还有集成 `youtube`  `twitter ` 和 `站点页面跳转` 等富文本功能。详细可以查看 [rich content](https://hui61.github.io/blog/tag-plugins/)。
 
 我还新建了一个仓库 https://github.com/guangzhengli/awesome-hugo-shortcodes ，用来收集 `hugo shortcodes` ，大家可以去看看有没有自己需要的，可以自行添加。
 
