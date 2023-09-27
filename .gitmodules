@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-ladder"]
+	path = themes/hugo-theme-ladder
+	url = git@github.com:hui61/hugo-theme-ladder.git
