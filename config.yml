@@ -8,7 +8,7 @@ defaultContentLanguage: 'zh'
 googleAnalytics: G-xxx
 paginate: 10
 params:
-  brand: HOME
+  brand: 主页
   avatarURL: /images/别闹了程序猿.png
   favicon: /images/别闹了程序猿.png
   author: 别闹了程序猿
