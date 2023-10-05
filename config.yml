@@ -45,12 +45,6 @@ menu:
     - name: 历史文章
       url: /archives
       weight: 3
-    - name: 留言板
-      url: /guestbook
-      weight: 4
-    - name: 网站统计
-      url: https://xxx
-      weight: 5
 taxonomies:
   series: series
   tag: tags
