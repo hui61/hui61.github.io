@@ -16,4 +16,52 @@
 &lt;ol>
 &lt;li>&lt;a href="https://stackoverflow.com/questions/45580610/what-is-the-downside-of-not-running-aws-lambda-functions-in-a-vpc">what-is-the-downside-of-not-running-aws-lambda-functions-in-a-vpc&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://stackoverflow.com/questions/52992085/why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the">why-cant-an-aws-lambda-function-inside-a-public-subnet-in-a-vpc-connect-to-the- internet&lt;/a>&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol></description></item><item><title>基于Docker的Hadoop和Spark环境搭建</title><link>https://hui61.github.io/blog/zh/hadoop-spark-docker/</link><pubDate>Mon, 21 Aug 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/hadoop-spark-docker/</guid><description>&lt;p>本文主要介绍了如何在docker中快速搭建Hadoop和Spark环境。如果想入门大数据，那么一个Docker环境下的大数据平台是最佳学习方式。&lt;/p>
+&lt;h2 id="环境">环境&lt;/h2>
+&lt;p>&lt;code>环境：MacOS Ventura 13.5&lt;/code>&lt;/p>
+&lt;p>&lt;code>机型：MacBook Pro (M1, 2021)&lt;/code>&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://dlcdn.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1-aarch64.tar.gz">hadoop-3.3.1-aarch64&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gitee.com/Bric666/java/attach_files/803375/download/jdk-8u301-linux-aarch64.tar.gz">JDK1.8-aarch64&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://downloads.lightbend.com/scala/2.12.14/scala-2.12.14.tgz">scala-2.12.14&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz">spark-3.2.1-bin-hadoop3.2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://files.pythonhosted.org/packages/0c/66/3cf748ba7cd7c6a4a46ffcc8d062f11ddc24b786c5b82936c857dc13b7bd/pyspark-3.4.1.tar.gz">pyspark-3.4.1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Move &lt;code>hadoop-3.3.1-aarch64.tar.gz&lt;/code>、&lt;code>jdk-8u301-linux-aarch64.tar.gz&lt;/code>、&lt;code>scala-2.12.14.tgz&lt;/code>、&lt;code>spark-3.2.1-bin-hadoop3.2.tgz&lt;/code> and &lt;code>pyspark-3.4.1.tar.gz&lt;/code> to &lt;code>resources&lt;/code> folder&lt;/p>
+&lt;h2 id="构建">构建&lt;/h2>
+&lt;h3 id="build-dockerfile">build Dockerfile&lt;/h3>
+&lt;pre tabindex="0">&lt;code>docker build -f Dockerfile -t puppets/hadoop:1.1 .
+&lt;/code>&lt;/pre>&lt;h3 id="create-hadoop-network">create hadoop network&lt;/h3>
+&lt;pre tabindex="0">&lt;code>sudo docker network create --driver=bridge hadoop
+&lt;/code>&lt;/pre>&lt;h3 id="start-container">start container&lt;/h3>
+&lt;pre tabindex="0">&lt;code>sudo ./start-container.sh
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>output:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>start hadoop-master container...
+start hadoop-slave1 container...
+start hadoop-slave2 container...
+&lt;/code>&lt;/pre>&lt;h3 id="start">Start&lt;/h3>
+&lt;pre tabindex="0">&lt;code>docker exec -it hadoop-master bash
+./start-hadoop.sh
+&lt;/code>&lt;/pre>&lt;p>因为yarn配置在hadoop-slave2节点，所以还需要去hadoop-slave2启动&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker exec -it hadoop-slave2 bash
+./start-hadoop.sh
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>HDFS UI -&amp;gt; http://localhost:9870/
+&lt;img src="https://hui61.github.io/images/blog/hdfs-ui.png" alt="hdfs-ui.png">&lt;/li>
+&lt;li>SPARK UI -&amp;gt; http://localhost:8088/
+&lt;img src="https://hui61.github.io/images/blog/spark-ui.png" alt="spark-ui.png">&lt;/li>
+&lt;/ul>
+&lt;h2 id="测试">测试&lt;/h2>
+&lt;p>在master节点运行任务&lt;/p>
+&lt;pre tabindex="0">&lt;code>./run-wordcount.sh 3.3.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>output&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>input file1.txt:
+Hello Hadoop
+input file2.txt:
+Hello Docker
+wordcount output:
+Docker 1
+Hadoop 1
+Hello 2
+&lt;/code>&lt;/pre></description></item></channel></rss>
