@@ -39,11 +39,9 @@ params:
       enable: true
       repo: hui61/hui61.github.io
       repo_id: R_kgDOKY6V_A
-      category: Announcements
-      category_id: DIC_kwDOHyVOjs4CQsH7
       mapping: pathname
       position: top
-      lang: zh-CN # pick a language from https://github.com/giscus/giscus/tree/main/locales
+      lang: en # pick a language from https://github.com/giscus/giscus/tree/main/locales
 menu:
   main:
     - name: 文章
