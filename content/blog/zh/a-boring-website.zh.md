@@ -1,5 +1,5 @@
 ---
-title: 一个无聊网站
+title: 一个无聊的网站
 date: 2023-09-14T16:47:12+08:00
 tags: ["boring", "AWS", "website"]
 series: ["Boring website"]
@@ -19,7 +19,7 @@ featured: true
 为了增加趣味性，我利用[ip2region](https://github.com/lionsoul2014/ip2region)解析IP地址获得地址信息，并且还添加了今日更新次数和总更新次数。为了防止输内次数过多，我对输入作了限制，当前每天仅限输入1000次。
 在积累了大概八百条记录时候，添加了词云图，使用[结巴中文分词](https://github.com/fxsjy/jieba)，图片绘制使用[wordcloud2](https://wordcloud2-js.timdream.org/#love)在线生成。
 
-{{< figure src="/images/blog/website-screenshot.png" height="600">}}
+{{< figure src="/images/blog/website-screenshot.png" height="500">}}
 
 ### 网站架构
 网站部署在AWS云上，主要服务有API Gateway、Lambda、DynamoDB和S3，这些都是AWS上的基础服务，架构如下图。
