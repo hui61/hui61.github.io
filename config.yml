@@ -44,6 +44,11 @@ params:
       mapping: pathname
       position: top
       lang: zh-CN # pick a language from https://github.com/giscus/giscus/tree/main/locales
+  analytics:
+    umami:
+      enable: true
+      website_id: 2103f3f6-2ddc-46d6-a124-b51f99b3f381
+      url: https://umami-azure-five.vercel.app/hugo-ladder
 menu:
   main:
     - name: 文章
@@ -59,7 +64,7 @@ menu:
       url: /guestbook
       weight: 4
     - name: 网站统计
-      url: https://xxx
+      url: https://umami-azure-five.vercel.app/share/FybeiKv13R2x8RZY/别闹了程序猿
       weight: 5
 taxonomies:
   series: series
