@@ -1,7 +1,7 @@
 ---
-title: 创建AWS多可用区的VPC网络环境
+title: AWS多可用区的VPC网络环境
 date: 2023-10-12T16:47:12+08:00
-tags: ["AWS", "VPC", "Subnet"]
+tags: ["AWS", "VPC", "Subnet", "Internet Gateway", "Route Table"]
 series: ["AWS基础设施"]
 featured: true
 ---
@@ -73,7 +73,9 @@ AWS console中提供了快速的创建VPC网络环境的功能，如下图所示
 
 ## 多可用区的VPC网络环境
 经过上面的操作，我们已经创建了基于三个可用区的VPC网络环境。多可用区的VPC网络环境，是AWS服务高可用的基础。
+
 当创建了多可用区的VPC网络环境后，我们可以在多个可用区中创建多个相同的资源。当某个可用区出现故障时，其他可用区的资源可以继续提供服务，从而保证了服务的高可用性。
+
 需要注意的是如何配置应用在多个可用区之间的切换。以EC2实例为例，我们在多个可用区中创建相同的EC2实例，通过Application Load Balancer（ALB）分发流量。当某个可用区出现故障时，ALB会将流量切换到其他可用区中的EC2实例上，从而保证了服务的高可用性。
 
 {{< figure src="/images/blog/vpc/aws-vpc-multi-az.png">}}
