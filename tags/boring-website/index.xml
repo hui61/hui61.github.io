@@ -12,11 +12,11 @@
 &lt;li>添加了今日剩余更新次数，今日更新次数和总更新次数&lt;/li>
 &lt;li>添加了词云图，使用&lt;a href="https://github.com/fxsjy/jieba">结巴中文分词&lt;/a>，图片绘制使用&lt;a href="https://wordcloud2-js.timdream.org/#love">wordcloud2&lt;/a>在线生成。&lt;/li>
 &lt;/ul>
-&lt;figure>&lt;img src="https://hui61.github.io/images/blog/website-screenshot.png" height="500"/>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/boring-website/website-screenshot.png" height="500"/>
 &lt;/figure>
 &lt;h2 id="网站架构">网站架构&lt;/h2>
 &lt;p>功能确定后，就需要确定网站架构。在这里我们使用AWS云，主要服务有Route53, API Gateway、Lambda、DynamoDB和S3，整体架构如下图。&lt;/p>
-&lt;figure>&lt;img src="https://hui61.github.io/images/blog/boring-website-architecture.png"/>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/boring-website/boring-website-architecture.png"/>
 &lt;/figure>
 &lt;p>网站响应流程：&lt;/p>
 &lt;ol>
