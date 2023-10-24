@@ -27,12 +27,12 @@ featured: true
 - 添加了今日剩余更新次数，今日更新次数和总更新次数
 - 添加了词云图，使用[结巴中文分词](https://github.com/fxsjy/jieba)，图片绘制使用[wordcloud2](https://wordcloud2-js.timdream.org/#love)在线生成。
 
-{{< figure src="/images/blog/website-screenshot.png" height="500">}}
+{{< figure src="/images/blog/boring-website/website-screenshot.png" height="500">}}
 
 ## 网站架构
 功能确定后，就需要确定网站架构。在这里我们使用AWS云，主要服务有Route53, API Gateway、Lambda、DynamoDB和S3，整体架构如下图。
 
-{{< figure src="/images/blog/boring-website-architecture.png">}}
+{{< figure src="/images/blog/boring-website/boring-website-architecture.png">}}
 
 网站响应流程：
 
