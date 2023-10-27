@@ -2,7 +2,7 @@
 title: AWS多可用区的VPC网络环境
 date: 2023-10-12T16:47:12+08:00
 tags: ["AWS", "VPC", "Subnet", "Internet Gateway", "Route Table"]
-series: ["AWS基础设施"]
+series: ["AWS基础"]
 featured: true
 ---
 
