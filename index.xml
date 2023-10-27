@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>别闹了程序猿</title><link>https://hui61.github.io/</link><description>Recent content on 别闹了程序猿</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 12 Oct 2023 16:47:12 +0800</lastBuildDate><atom:link href="https://hui61.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>创建AWS多可用区的VPC网络环境</title><link>https://hui61.github.io/blog/zh/create-your-aws-vpc-with-multiple-available-zones/</link><pubDate>Thu, 12 Oct 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/create-your-aws-vpc-with-multiple-available-zones/</guid><description>&lt;p>本文介绍了AWS Region、Available zone、VPC及其Subnet、Internet Gateway和Route Table等概念，创建了一个多可用区的VPC，并介绍多可用区如何保证服务高可用性。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>别闹了程序猿</title><link>https://hui61.github.io/</link><description>Recent content on 别闹了程序猿</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 12 Oct 2023 16:47:12 +0800</lastBuildDate><atom:link href="https://hui61.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS多可用区的VPC网络环境</title><link>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</link><pubDate>Thu, 12 Oct 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</guid><description>&lt;p>本文介绍了AWS Region、Available zone、VPC及其Subnet、Internet Gateway和Route Table等概念，创建了一个多可用区的VPC，并介绍多可用区如何保证服务高可用性。&lt;/p>
 &lt;h2 id="region">Region&lt;/h2>
 &lt;p>AWS Region即AWS地区，是AWS提供的基础设施服务的物理部署地点。每个Region都是独立于其他Region，这样能够最大限度保证容错率和可用性。&lt;/p>
 &lt;h2 id="available-zone">Available zone&lt;/h2>
@@ -102,9 +102,9 @@
 &lt;/figure>
 &lt;p>当配置好需要创建的资源后，点击&lt;code>Create VPC&lt;/code>即可创建所有资源。&lt;/p>
 &lt;h2 id="多可用区的vpc网络环境">多可用区的VPC网络环境&lt;/h2>
-&lt;p>经过上面的操作，我们已经创建了基于三个可用区的VPC网络环境。多可用区的VPC网络环境，是AWS服务高可用的基础。
-当创建了多可用区的VPC网络环境后，我们可以在多个可用区中创建多个相同的资源。当某个可用区出现故障时，其他可用区的资源可以继续提供服务，从而保证了服务的高可用性。
-需要注意的是如何配置应用在多个可用区之间的切换。以EC2实例为例，我们在多个可用区中创建相同的EC2实例，通过Application Load Balancer（ALB）分发流量。当某个可用区出现故障时，ALB会将流量切换到其他可用区中的EC2实例上，从而保证了服务的高可用性。&lt;/p>
+&lt;p>经过上面的操作，我们已经创建了基于三个可用区的VPC网络环境。多可用区的VPC网络环境，是AWS服务高可用的基础。&lt;/p>
+&lt;p>当创建了多可用区的VPC网络环境后，我们可以在多个可用区中创建多个相同的资源。当某个可用区出现故障时，其他可用区的资源可以继续提供服务，从而保证了服务的高可用性。&lt;/p>
+&lt;p>需要注意的是如何配置应用在多个可用区之间的切换。以EC2实例为例，我们在多个可用区中创建相同的EC2实例，通过Application Load Balancer（ALB）分发流量。当某个可用区出现故障时，ALB会将流量切换到其他可用区中的EC2实例上，从而保证了服务的高可用性。&lt;/p>
 &lt;figure>&lt;img src="https://hui61.github.io/images/blog/vpc/aws-vpc-multi-az.png"/>
 &lt;/figure></description></item><item><title>一个无聊的网站</title><link>https://hui61.github.io/blog/zh/a-boring-website/</link><pubDate>Thu, 14 Sep 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/a-boring-website/</guid><description>&lt;p>本文是无聊网站的第一篇，主要介绍了无聊网站&lt;a href="https://freeupdateme.com">freeupdateme.com&lt;/a>的建站起因、网站功能、网站架构、技术难点、代码模板和参考资料。&lt;/p>
 &lt;h2 id="建站起因">建站起因&lt;/h2>
