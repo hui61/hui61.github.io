@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>别闹了程序猿</title><link>https://hui61.github.io/</link><description>Recent content on 别闹了程序猿</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 12 Oct 2023 16:47:12 +0800</lastBuildDate><atom:link href="https://hui61.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS多可用区的VPC网络环境</title><link>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</link><pubDate>Thu, 12 Oct 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</guid><description>&lt;p>本文介绍了AWS Region、Available zone、VPC及其Subnet、Internet Gateway和Route Table等概念，创建了一个多可用区的VPC，并介绍多可用区如何保证服务高可用性。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>别闹了程序猿</title><link>https://hui61.github.io/</link><description>Recent content on 别闹了程序猿</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 15 Dec 2023 17:00:00 +0800</lastBuildDate><atom:link href="https://hui61.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>使用JMeter对API进行压力测试</title><link>https://hui61.github.io/blog/zh/%E4%BD%BF%E7%94%A8jmeter%E5%AF%B9api%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link><pubDate>Fri, 15 Dec 2023 17:00:00 +0800</pubDate><guid>https://hui61.github.io/blog/zh/%E4%BD%BF%E7%94%A8jmeter%E5%AF%B9api%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid><description>&lt;p>本文介绍了JMeter，一款Java编写的API压力测试工具。以访问wikipedia主页为例，图文介绍了如何构建测试用例。&lt;/p>
+&lt;h2 id="jmeter简介">JMeter简介&lt;/h2>
+&lt;p>Apache JMeter 是Apache组织的开放源代码项目，是一个纯Java桌面应用，用于压力测试和性能测试。&lt;/p>
+&lt;h2 id="下载与启动">下载与启动&lt;/h2>
+&lt;p>因为JMeter是Java桌面应用，所以需要提前安装并配置好Java环境。博主使用的是Mac，所以下载&lt;a href="https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.tgz">apache-jmeter-5.6.2.tgz&lt;/a>.
+下载完成后双击解压，进入&lt;code>bin&lt;/code>目录，使用&lt;code>./jmeter.sh&lt;/code>启动软件&lt;/p>
+&lt;h2 id="创建测试">创建测试&lt;/h2>
+&lt;h3 id="thread-group">Thread Group&lt;/h3>
+&lt;p>在&lt;code>Test Plan&lt;/code>右键 &amp;ndash;&amp;gt; &lt;code>Add&lt;/code> &amp;ndash;&amp;gt; &lt;code>Threads(Users)&lt;/code> &amp;ndash;&amp;gt; &lt;code>Thread Group&lt;/code>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Create%20Thread%20Group.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>Thread Group配置
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Thread%20Group%20Config.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h3 id="http-request">HTTP Request&lt;/h3>
+&lt;p>在&lt;code>Thread Group&lt;/code>右键 &amp;ndash;&amp;gt; &lt;code>Add&lt;/code> &amp;ndash;&amp;gt; &lt;code>Sampler&lt;/code> &amp;ndash;&amp;gt; &lt;code>HTTP Request&lt;/code>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Create%20HTTP%20Request.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>HTTP Request配置
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/HTTP%20Request%20Config.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h3 id="response-assertion">Response Assertion&lt;/h3>
+&lt;p>在&lt;code>Thread Group&lt;/code>右键 &amp;ndash;&amp;gt; &lt;code>Add&lt;/code> &amp;ndash;&amp;gt; &lt;code>Assertionis&lt;/code> &amp;ndash;&amp;gt; &lt;code>Response Assertion&lt;/code>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Create%20Response%20Assertion.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>Response Assertion Config配置
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Response%20Assertion%20Config.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h3 id="view-results-tree">View Results Tree&lt;/h3>
+&lt;p>在&lt;code>Thread Group&lt;/code>右键 &amp;ndash;&amp;gt; &lt;code>Add&lt;/code> &amp;ndash;&amp;gt; &lt;code>Listener&lt;/code> &amp;ndash;&amp;gt; &lt;code>View Results Tree&lt;/code>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Create%20View%20Results%20Tree.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>View Results Tree界面
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/View%20Results%20Tree.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h3 id="summary-report">Summary Report&lt;/h3>
+&lt;p>在&lt;code>Thread Group&lt;/code>右键 &amp;ndash;&amp;gt; &lt;code>Add&lt;/code> &amp;ndash;&amp;gt; &lt;code>Listener&lt;/code> &amp;ndash;&amp;gt; &lt;code>Summary Report&lt;/code>
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Create%20Summary%20Report.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>Summary Report界面
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Summary%20Report.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;p>最后需要将测试保存为*.jmx文件，这里将访问wikipedia的请求保存为wikipedia.jmx
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/jmx.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h2 id="命令行执行测试">命令行执行测试&lt;/h2>
+&lt;p>命令说明&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>jmeter -n -t &lt;span style="color:#f92672">[&lt;/span>jmx file&lt;span style="color:#f92672">]&lt;/span> -l &lt;span style="color:#f92672">[&lt;/span>results file&lt;span style="color:#f92672">]&lt;/span> -e -o &lt;span style="color:#f92672">[&lt;/span>Path to web report folder&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>具体执行命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>./jmeter -n -t ./wikipedia.jmx -l wikipedia/result/wikipedia.txt -e -o wikipedia
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>执行过程
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Command%20execute%20test.png"/>
+&lt;/figure>
+&lt;/p>
+&lt;h2 id="测试结果">测试结果&lt;/h2>
+&lt;p>命令行执行测试完毕后，可以在&lt;code>wikipedia/index.html&lt;/code>中查看执行的具体情况
+&lt;figure>&lt;img src="https://hui61.github.io/images/blog/%e4%bd%bf%e7%94%a8JMeter%e5%af%b9API%e8%bf%9b%e8%a1%8c%e5%8e%8b%e5%8a%9b%e6%b5%8b%e8%af%95/Test%20Result%20Web%20Page.png"/>
+&lt;/figure>
+&lt;/p></description></item><item><title>AWS多可用区的VPC网络环境</title><link>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</link><pubDate>Thu, 12 Oct 2023 16:47:12 +0800</pubDate><guid>https://hui61.github.io/blog/zh/aws-multiple-available-zones-vpc/</guid><description>&lt;p>本文介绍了AWS Region、Available zone、VPC及其Subnet、Internet Gateway和Route Table等概念，创建了一个多可用区的VPC，并介绍多可用区如何保证服务高可用性。&lt;/p>
 &lt;h2 id="region">Region&lt;/h2>
 &lt;p>AWS Region即AWS地区，是AWS提供的基础设施服务的物理部署地点。每个Region都是独立于其他Region，这样能够最大限度保证容错率和可用性。&lt;/p>
 &lt;h2 id="available-zone">Available zone&lt;/h2>
