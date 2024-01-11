@@ -827,6 +827,12 @@ img {
 figure {
   text-align: center; }
 
+.video-shortcode {
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 0 !important;
+  max-width: 80rem; }
+
 .twitter-tweet {
   margin-left: auto;
   margin-right: auto;
