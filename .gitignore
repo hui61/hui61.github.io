@@ -1,1 +1,4 @@
 .idea
+resources
+public
+aws-credentials.sh
